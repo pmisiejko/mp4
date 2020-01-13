@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+  <head>
+    <meta charset="UTF-8">
+    <title>Roslina</title>
+		<link rel="stylesheet" href="css/StronaGlowna.css"/>
+		<script src='js/produktsApiCalls.js'></script>
+		<script src='js/popup.js'></script>
+  </head>
+  <body>
+		<label id="labelglowny1">KWIACIARNIA INTERNETOWA</label>
+    <label id="labelglowny2">MANUFAKTURA KWIATÓW</label>
+    <hr style="border: 0px; background: black; height: 2px;">
+    <ul class="breadcrumb">
+  <li><a href="index.html">Strona główna</a></li>
+  <li>Rośliny</li>
+  </ul>
+  <header>
+      <img src="images/Kwiaciarnia2.jpg" alt="kwiaciarnialogo" id="kwiaciarnialogo"></img>
+  </header>
+  <label class ="labelnazwa">ROŚLINY: WSZYSTKIE PODKATEGORIE</label>
+    <div id='buttons'>
+      <button class = "dodawanie" onclick="window.location.href='DodawanieR.html' ">DODAJ NOWY</button>
+      <form method="get" action="">
+        <input class="szukaj" type="text" placeholder="Szukaj...">
+        <input type="submit" value="Szukaj">
+      </form>
+    </div>
+    <table class = "table">
+   <tr>
+      <td>WIDOK</td> <td>NAZWA</td> <td>PODKATEGORIA</td> <td>AKCJE</td>
+   </tr>
+   
+   <tbody id="tbodyProdukts"></tbody>
+   
+   
+ 
+    </table>
+
+
+
+	
+    <footer class="breadcrumb"><p id="author">Author:Małgorzata Szofer</p><p id="copyright">Copyright KwiaciarniaInternetowa.pl © 2019</p></footer>
+	
+  </body>
+  <div id="details" class="overlay">
+	<div class="popup">
+		<a class="close" href="Rosliny.html">&Cross;</a>
+		<div class="box">
+	<span id="iddetails"></span></br></br>
+	<span id="nazwadetails"></span></br></br>
+	<span id="zdjeciedetails"></span></br></br>
+	<span id="kategoriadetails"></span></br></br>
+	<span id="podkategoriadetails"></span></br></br>
+	<span id="cenadetails"></span></br></br>
+	<span id="krajdetails"></span></br></br>
+	<span id="opisdetails"></span></br></br>
+		</div>
+	</div>
+</div>
+<script src='js/produktsSPArosliny.js'></script>
+</html>

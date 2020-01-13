@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+  <head>
+    <meta charset="UTF-8">
+    <title>Zamowienia</title>
+		<link rel="stylesheet" href="css/StronaGlowna.css"/>
+		<script src='js/ordersApiCalls.js'></script>
+		<script src='js/produktsApiCalls.js'></script>
+		<script src='js/usersApiCalls.js'></script>
+		<script src='js/popup.js'></script>
+  </head>
+  <body>
+		<label id="labelglowny1">KWIACIARNIA INTERNETOWA</label>
+    <label id="labelglowny2">MANUFAKTURA KWIATÓW</label>
+    <hr style="border: 0px; background: black; height: 2px;">
+    <ul class="breadcrumb">
+  <li><a href="index.html">Strona główna</a></li>
+  <li>Zamówienia</li>
+  </ul>
+  <header>
+      <img src="images/Kwiaciarnia2.jpg" alt="kwiaciarnialogo" id="kwiaciarnialogo"></img>
+  </header>
+  <label class ="labelnazwa">ZAMÓWIENIA</label>
+    <div id='buttons'>
+      <form method="get" action="">
+        <input class="szukaj" type="text" placeholder="Szukaj...">
+        <input type="submit" value="Szukaj">
+      </form>
+    </div>
+    <table class = "tablezam">
+   <tr>
+      <td>NR ZAMÓWIENIA</td> <td>DATA ZAMÓWIENIA</td>
+       <td>AKCJE</td>
+   </tr>
+    <tbody id="tbody-orders"></tbody>
+    </table>
+    <footer class="breadcrumb"><p id="author">Author:Małgorzata Szofer</p><p id="copyright">Copyright KwiaciarniaInternetowa.pl © 2019</p></footer>
+	  <div id="details" class="overlay">
+	<div class="popup">
+		<a class="close" href="Zamowienia.html">&Cross;</a>
+		<div class="box">
+	<span id="idZamowienia"></span></br></br>
+	<span id="IdKlienta"></span></br></br>
+	<span id="data"></span></br></br>
+	<span id="daneKlienta"></span></br></br>
+	<span id="adres"></span></br></br>
+
+	<span id="produkty"></span></br></br>
+	<span id="cena"></span></br></br>
+	
+		</div>
+	</div>
+</div>
+  </body>
+  <script src='js/ordersSPA.js'></script>
+</html>

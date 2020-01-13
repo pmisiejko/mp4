@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+  <head>
+    <meta charset="UTF-8">
+    <title>DodajNowyRoslina</title>
+		<link rel="stylesheet" href="css/StronaGlowna.css"/>
+      <script src="js/Edycja.js"></script>
+	  <script src='js/produktsApiCalls.js'></script>
+  </head>
+  <body>
+		<label id="labelglowny1">KWIACIARNIA INTERNETOWA</label>
+    <label id="labelglowny2">MANUFAKTURA KWIATÓW</label>
+    <hr style="border: 0px; background: black; height: 2px;">
+    <ul class="breadcrumb">
+  <li><a href="StronaGlowna.html">Strona główna</a></li>
+  <li><a href="Rosliny.html">Roślina</a></li>
+  <li>Dodawanie</li>
+  </ul>
+    <header>
+      	<img src="images//Kwiaciarnia2.jpg" alt="kwiaciarnialogo" id="kwiaciarnialogo"></img>
+    </header>
+    <label id="logowanie">Dodaj nowy produkt</label>
+    <nav class="contenerdod">
+      <div class = "subdodawanie"> Zdjęcie: </div>
+      <div class = "subdodawanie"> <input type="file" id="foto" name=""class="buttonzdj"accept="image/x-png,image/gif,image/jpeg" > </div>
+      <div class = "subdodawanie"> &nbsp;  </div>
+	   <div class = "subdodawanie"> Id: </div>
+      <input type="text" id="id" placeholder="ID" required>
+      <div class = "subdodawanie"> &nbsp;  </div>
+      <div class = "subdodawanie"> Kategoria: </div>
+      <input type="text" id="kategoria" placeholder="Kategoria" required>
+      <span class = "errorval" id = "kategoriaerror"></span>
+      <div class = "subdodawanie"> Nazwa:  </div>
+      <input type="text" id="nazwa" placeholder="Nazwa" required>
+      <span class = "errorval" id = "nazwaerror"></span>
+      <div class = "subdodawanie"> Podkategoria:  </div>
+      <input type="text" id="podkategoria" placeholder="Podkategoria" required>
+      <span class = "errorval" id = "podkategoriaerror"></span>
+      <div class = "subdodawanie"> Cena:  </div>
+      <input type="number" id="cena" placeholder="Cena" required>
+        <span class = "errorval" id = "cenaerror"></span>
+      <div class = "subdodawanie"> Kraj&nbsp;pochodzenia:</div>
+      <input type="text" id="kraj" placeholder="Kraj pochodzenia" required>
+      <span class = "errorval" id = "krajerror"></span>
+      <div class = "subdodawanie"> Opis: </div>
+      <textarea id="opis" placeholder="Opis" wrap="hard" cols="10" required></textarea>
+        <span class = "errorval" id = "opiserror"></span>
+      <div class = "subdodawanie"> &nbsp;  </div>
+      <div class = "subdodawanie"> &nbsp;  </div>
+      <div class = "subdodawanie"> &nbsp;  </div>
+      <input type="button" id="zapisz" class="buttondod" value="Zapisz">
+      <div class = "subdodawanie"> &nbsp;  </div>
+      <input type="button" class="buttondod" value="Anuluj" onClick="window.location.href='Rosliny.html'">
+		</nav>
+      <footer class="breadcrumb"><p id="author">Author:Małgorzata Szofer</p><p id="copyright">Copyright KwiaciarniaInternetowa.pl © 2019</p></footer>
+	  <script src='js/produktsSPA.js'></script>
+  </body>
+</html>

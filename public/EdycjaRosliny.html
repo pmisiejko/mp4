@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+  <head>
+    <meta charset="UTF-8">
+    <title>Szczegoly</title>
+		<link rel="stylesheet" href="../../Kwiaciarnia-Internetowa/StronaGlowna.css"/>
+      <script src="../../Kwiaciarnia-Internetowa/JS/Edycja.js"></script>
+  </head>
+  <body>
+		<label id="labelglowny1">KWIACIARNIA INTERNETOWA</label>
+    <label id="labelglowny2">MANUFAKTURA KWIATÓW</label>
+    <hr style="border: 0px; background: black; height: 2px;">
+    <ul class="breadcrumb">
+  <li><a href="StronaGlowna.html">Strona główna</a></li>
+  <li><a href="Rosliny.html">Roślina</a></li>
+  <li><a href="SzczegolyR.html">Szczegóły</a></li>
+  <li>Edycja</li>
+  </ul>
+    <header>
+      	<img src="../../Kwiaciarnia-Internetowa/Grafiki/Kwiaciarnia2.jpg" alt="kwiaciarnialogo" id="kwiaciarnialogo"></img>
+    </header>
+    <label id="logowanie">EDYCJA ROŚLINY</label>
+    <nav class="contenerdod">
+      <div class = "subdodawanie"> Zdjęcie: </div>
+      <div class = "subdodawanie"> <input type="file" name=""class="buttonzdj"accept="image/x-png,image/gif,image/jpeg" > </div>
+      <div class = "subdodawanie"> &nbsp;  </div>
+      <div class = "subdodawanie"> Kategoria: </div>
+      <input type="text" id="kategoria" value="Roślina" required>
+      <span class = "errorval" id = "kategoriaerror"></span>
+      <div class = "subdodawanie"> Nazwa:  </div>
+      <input type="text" id="nazwa" value="Monstera dziurawa" required>
+      <span class = "errorval" id = "nazwaerror"></span>
+      <div class = "subdodawanie"> Podkategoria:  </div>
+      <input type="text" id="podkategoria" value="Rośliny doniczkowe" required>
+      <span class = "errorval" id = "podkategoriaerror"></span>
+      <div class = "subdodawanie"> Cena:  </div>
+      <input type="number" id="cena" value="80" required>
+      <span class = "errorval" id = "cenaerror"></span>
+      <div class = "subdodawanie"> Kraj&nbsp;pochodzenia:</div>
+      <input type="text" id="kraj" value="Brazylia" required>
+      <span class = "errorval" id = "krajerror"></span>
+      <div class = "subdodawanie"> Opis: </div>
+      <textarea id="opis" wrap="hard" cols="10" required>
+      Monstera dziurawa jest rośliną tolerancyjną na różne warunki. Dobrze rośnie nawet w zacienionych miejscach, dlatego często jest wybierana do biur i mieszkań.</textarea>
+      <span class = "errorval" id = "opiserror"></span>
+      <div class = "subdodawanie"> &nbsp;  </div>
+      <div class = "subdodawanie"> &nbsp;  </div>
+      <div class = "subdodawanie"> &nbsp;  </div>
+      <div class = "subdodawanie"> &nbsp;  </div>
+      <div class = "subdodawanie"> &nbsp;  </div>
+      <div class = "subdodawanie"> &nbsp;  </div>
+      <input type="button" class="buttondod" value="Zapisz zmiany" onClick="validate('SzczegolyR')">
+      <div class = "subdodawanie"> &nbsp;  </div>
+      <input type="button" class="buttondod" value="Anuluj" onClick="window.location.href='Rosliny.html'">
+		</nav>
+    <footer class="breadcrumb"><p id="author">Author:Małgorzata Szofer</p><p id="copyright">Copyright KwiaciarniaInternetowa.pl © 2019</p></footer>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+  <head>
+    <meta charset="UTF-8">
+    <title>EdycjaZamowienia</title>
+		<link rel="stylesheet" href="../../Kwiaciarnia-Internetowa/StronaGlowna.css"/>
+    <script src="../../Kwiaciarnia-Internetowa/JS/EdycjaZamowienia.js"></script>
+  </head>
+  <body>
+		<label id="labelglowny1">KWIACIARNIA INTERNETOWA</label>
+    <label id="labelglowny2">MANUFAKTURA KWIATÓW</label>
+    <hr style="border: 0px; background: black; height: 2px;">
+    <ul class="breadcrumb">
+  <li><a href="StronaGlowna.html">Strona główna</a></li>
+  <li><a href="Zamowienia.html">Zamówenia</a></li>
+  <li>Szczegóły</li>
+  </ul>
+    <header>
+      	<img src="../../Kwiaciarnia-Internetowa/Grafiki/Kwiaciarnia2.jpg" alt="kwiaciarnialogo" id="kwiaciarnialogo"></img>
+    </header>
+    <label id="logowanie">EDYCJA ZAMÓWIENIA</label>
+    <nav class="contenerzam">
+      <div >&nbsp;</div>
+      <div class = "subzam"> &nbsp; </div>
+      <div class = "subzam"> &nbsp; </div>
+      <div class = "subzamR"> Nr.&nbsp;zamówienia: </div>
+      <div class = "subzamL"> 300</div>
+      <div class = "subzam"> &nbsp; </div>
+      <div class = "subzamR"> Nr.&nbsp;klienta:  </div>
+      <div class = "subzamL">21</div>
+      <div class = "subzam"> &nbsp; </div>
+      <div class = "subzamR">Data&nbsp;zamówienia:  </div>
+      <div class = "subzamL">01.09.2019</div>
+      <div class = "subzam"> &nbsp; </div>
+      <div class = "subzamR"> Data&nbsp;dostawy:  </div>
+      <input type="text" id="data" value="08.09.2019" required>
+      <span class = "errorval" id = "dataerror"></span>
+      <div class = "subzamR"> Status:</div>
+      <input type="text" id="status" value="Wysłane" required>
+      <span class = "errorval" id = "statuserror"></span>
+      <div class = "subzamR"> Rabat: </div>
+      <input type="text" id="rabat" value="BRAK" required>
+      <span class = "errorval" id = "rabaterror"></span>
+      <div class = "subzamR"> Imię,&nbsp;nazwisko klienta </div>
+      <div class = "subzamL"> Jan Kowalski</div>
+      <div class = "subzam"> &nbsp; </div>
+      <div class = "subzamR"> Adres&nbsp;dostawy:  </div>
+      <input type="text" id="adres" value="ul.Marszałkowska 32/208, Warszawa" required>
+      <span class = "errorval" id = "adreserror"></span>
+      <div class = "subzam"> &nbsp; </div>
+      <div class = "subzam"> &nbsp; </div>
+      <div class = "subzam"> &nbsp; </div>
+      <div class = "subzam"> &nbsp; </div>
+      </nav>
+        <table class = "tableszczegoly">
+       <tr>
+          <td>Nazwa produktu</td> <td>Ilość</td> <td>Cena(zł)</td> <td>AKCJA</td>
+       </tr>
+       <tr>
+      <td>Konewka metalowa</td> <td><input type="number" id="dod" value="1" required></td> <td><input type="number" id="dod" value="120" required></td>
+      <td><button class = "edycja" onclick="window.location.href='Zamowienia.html' ">USUŃ</button></td>
+       </tr>
+       <tr>
+      <td>Kolendra</td> <td><input type="number" id="dod" value="4" required></td> <td><input type="number" id="dod" value="40" required></td>
+        <td><button class = "edycja" onclick="window.location.href='Zamowienia.html' ">USUŃ</button></td>
+       </tr>
+       <tr>
+      <td>Monsera dziurawa</td> <td><input type="number" id="dod" value="2" required></td> <td><input type="number" id="dod" value="80" required></td>
+        <td><button class = "edycja" onclick="window.location.href='Zamowienia.html' ">USUŃ</button></td>
+       </tr>
+        </table>
+      <nav class="contenerbuttonZ">
+      <input type="button" class="buttondod" value="Dodaj produkt" onClick="window.location.href='Zamowienia.html' ">
+      <input type="button" class="buttondod" value="Zapisz zmiany" onClick="validate('SzczegolyZ')">
+      <input type="button" class="buttondod" value="Anuluj" onClick="window.location.href='SzczegolyZ.html'">
+    </nav>
+    <footer class="breadcrumb"><p id="author">Author:Małgorzata Szofer</p><p id="copyright">Copyright KwiaciarniaInternetowa.pl © 2019</p></footer>
+  </body>
+</html>
