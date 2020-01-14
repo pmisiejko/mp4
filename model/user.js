@@ -10,12 +10,11 @@ class User {
         this.firstName = firstName;
 		this.lastName = lastName;
         this.adres = adres;
-		 this.punkty = punkty;
+		this.punkty = punkty;
         this.login = login;
-		 this.haslo = haslo;
+		this.haslo = haslo;
         this.mail = mail;
-		 this.telefon = telefon;
-      
+		this.telefon = telefon;
     }
 
     //dodawanie obiektu do bazy

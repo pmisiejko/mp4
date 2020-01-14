@@ -1,3 +1,4 @@
+const db = require('../db.js');
 const ordersView = document.getElementById('view-orders');
 const tbodyOrders = document.getElementById('tbody-orders');
 
@@ -8,14 +9,17 @@ const formId = document.getElementById('form-orderId');
 const formFirstName = document.getElementById('form-firstName');
 const formLastName = document.getElementById('form-lastName');
  */
- const idZamowienia = document.getElementById('idZamowienia');
-const IdKlienta = document.getElementById('IdKlienta');
+
+
+
+const ID_zamowienia = document.getElementById('ID_zamowienia');
+const Klient_ID_klienta = document.getElementById('Klient_ID_klienta');
 const data = document.getElementById('data');
 const daneKlienta = document.getElementById('daneKlienta');
 const adres = document.getElementById('adres');
 const idProduktow = document.getElementById('idProduktow');
 const ilosc = document.getElementById('ilosc');
-const cena = document.getElementById('cena');
+const cena = document.getElementById('cena'); 
 const produkty = document.getElementById('produkty');
 let dane=[];
 let dataciete=[];
@@ -33,6 +37,7 @@ getAndRenderUsers();
 getAndRenderProdukts();
 getAndRenderOrders();
 
+
 //pobranie danych z serwera przez API 
 //i przekazanie ich do funkcji aktualizującej widok
 function getAndRenderOrders() {
@@ -48,20 +53,31 @@ function renderOrdersTable(orderList) {
         tbodyOrders.removeChild(tbodyOrders.firstChild);
     }
     //tworzymy wiersze tabeli z danymi użytkowników na podstawie listy obiektów
+
+    //db.query('SELECT * FROM Zamowienie', (err, rows, fields));
     let ordersHtml = "";
     orderList.forEach(u => {
+        
+    console.log(u);
         ordersHtml += `
             <tr>
-                <td>${u.idZamowienia}</td>            
-                <td>${u.data}</td>           
+                <td>${u.ID_zamowienia}</td>
+                <td>${u.data_zamowienia}</td>
+                <td>${u.data_dostawy}</td>   
+                <td>${u.adres_dostawy}</td>   
+                <td>${u.Klient_ID_klienta}</td>   
+                <td>${u.status}</td>   
+                <td>${u.rabat}</td>         
+                <td>${u.imie_klienta}</td>         
+                <td>${u.nazwisko_klienta}</td>    
                 <td class="actions">
                     <button class = "edycja" onClick="deleteProdukt(parseInt(${u.id}))">EDYTUJ</button>
-					<button class = "edycja" onClick="deleteOrder(parseInt(${u.idZamowienia}))">USUŃ</button>
-					<button class = "edycja" onClick="showDetails(${u.idZamowienia})"">SZCZEGÓŁY</button>
+					<button class = "edycja" onClick="deleteOrder(parseInt(${u.ID_zamowienia}))">USUŃ</button>
+					<button class = "edycja" onClick="showDetails(${u.ID_zamowienia})"">SZCZEGÓŁY</button>
                 </td>            
             </tr>
         `;
-		dane+=u.idZamowienia+"!"+u.IdKlienta+"!"+u.data+"!"+u.daneKlienta+"!"+u.adres+"!"+u.idProduktow+"!"+u.ilosc+"_";
+        dane+=u.ID_zamowienia+"!"+u.data_zamowienia+"!"+u.data_dostawy+"!"+u.adres_dostawy+"!"+u.Klient_ID_klienta+"!"+u.status+"!"+u.rabat+"!"+u.imie_klienta+"!"+u.nazwisko_klienta+"_";
 		
 		
     });
@@ -119,8 +135,8 @@ function showDetails(orderId) {
 		{
 		
 		useridentyfikator=string[1];
-		idZamowienia.innerHTML = 'ID zamowienia: '+string[0];
-		IdKlienta.innerHTML = 'ID klienta: '+string[1]+'</b>';
+		ID_zamowienia.innerHTML = 'ID zamowienia: '+string[0];
+		Klient_ID_klienta.innerHTML = 'ID klienta: '+string[1]+'</b>';
 		data.innerHTML = 'Data zamówienia: '+string[2];
 		daneKlienta.innerHTML = 'Dane klienta: ';
 		adres.innerHTML = 'Adres: ';

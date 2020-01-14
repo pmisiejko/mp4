@@ -7,7 +7,7 @@ function validate(url) {
         var ids = ["data", "status", "rabat", "adres"];
         var idsPL = ["Data", "Status", "Rabat", "Adres"];
 
-        // Tekst komunikat�w
+        // Tekst komunikat�w
         var polaFormularzu = [], polaInput = [], errors = [], flags = [];
 
         for (i of ids) {
@@ -19,9 +19,9 @@ function validate(url) {
 
         var regexs = [
             /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/, //Data
-            /[A-Z]\D+[- ����󜟿��ʣ�ӌ��]*/,  // Status
+            /[A-Z]\D+[- ąćęłńóśźżĄĆĘŁŃÓŚŹŻ]*/,  // Status
             /\d/,                               // Rabat
-            /\w+\W*[- ����󜟿��ʣ�ӌ��]*/ // Adres
+            /\w+\W*[- ąćęłńóśźżĄĆĘŁŃÓŚŹŻ]*/ // Adres
         ];
 
         for (var i = 0; i < ids.length; i++) {
@@ -63,3 +63,4 @@ function validate(url) {
             flags[i] = false;
         }
     }
+}
