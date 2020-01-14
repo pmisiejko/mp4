@@ -6,26 +6,6 @@ const app = express();
 
 const db = require('./db.js');
 
-/*
-const mysql = require('mysql');
-const db = mysql.createConnection({
-    host:"127.0.0.1",
-    user: "root",
-    password: "admin",
-    database: "flowers_store",
-    port: 3306
-})
-
-db.connect(err => {
-    if (!err) {
-      console.log("DB Connection Succeeded");
-    } else {
-      console.log("DB Connection Failed" + err);
-    }
-  });
-
-module.exports = db;
-*/
 
 // parsuje dane typu application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
