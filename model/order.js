@@ -2,19 +2,33 @@
 let nextId = 1;
 //ekstensja klasy (wszystkie obiekty)
 const orderExtent = [];
+const db = require('../db.js');
 
 class Order {
     //parametr id jest na końcu, bo jest opcjonalny
-    constructor(idZamowienia, IdKlienta, data, daneKlienta,adres, idProduktow,ilosc) {
+/*     constructor(idZamowienia, IdKlienta, data, daneKlienta,adres, idProduktow,ilosc) {
         this.idZamowienia = idZamowienia;
         this.IdKlienta = IdKlienta;
 		this.data=data;
         this.daneKlienta = daneKlienta;
-		 this.adres = adres;
+		this.adres = adres;
         this.idProduktow = idProduktow;
-		this.ilosc = ilosc;
-      
+		this.ilosc = ilosc;      
+    } */
+
+    // Konstruktor pasujacy do bazy danych
+    constructor(ID_zamowienia, data_zamowienia, data_dostawy, adres_dostawy, Klient_ID_klienta, status, rabat, imie_klienta, nazwisko_klienta) {
+        this.ID_zamowienia = ID_zamowienia;
+        this.data_zamowienia = data_zamowienia;
+        this.data_dostawy = data_dostawy;
+        this.adres_dostawy = adres_dostawy;
+        this.Klient_ID_klienta = Klient_ID_klienta;
+        this.status = status;
+        this.rabat = rabat; 
+        this.imie_klienta = imie_klienta;
+        this.nazwisko_klienta = nazwisko_klienta
     }
+
 
     //dodawanie obiektu do bazy
     static add(order) {
@@ -36,13 +50,11 @@ class Order {
     //usuwanie obiektu po id
     static delete(d) {
         for(let i=0;i<orderExtent.length;i++)
-		{
-	
-			if(orderExtent[i].idZamowienia===d)
+		{	
+			if(orderExtent[i].ID_zamowienia===d)
 			{
 			orderExtent.splice(orderExtent[i],1);
-			}
-	
+			}	
 		}
     } 
     //pobieranie obiektu do widoku szczegółów
@@ -60,11 +72,19 @@ class Order {
         orderExtent.splice(0, orderExtent.length);
         //resetujemy licznik id
         nextId = 1;
-		 Order.add(new Order('1', '1','01.09.2019','','','111','1'));
-		 Order.add(new Order('2', '2','11.09.2019','','','222','1'));
-			Order.add(new Order('3', '3','12.09.2019','','','333 111','2 1'));
-    
-	   
+
+        
+        db.query('SELECT * FROM Zamowienie', (err, rows, fields)=>{
+            if (!err){            
+            
+            rows.forEach(element => {
+                Order.add(new Order(element.ID_zamowienia, element.data_zamowienia, element.data_dostawy, element.adres_dostawy, 
+                    element.Klient_ID_klienta, element.status, element.rabat, element.imie_klienta, element.nazwisko_klienta));  
+             });
+            }
+            else
+              console.log(err);
+          });
     }
 }
 

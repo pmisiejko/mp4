@@ -4,6 +4,9 @@ const port = 3001;
 // const cors = require('cors');
 const app = express();
 
+const db = require('./db.js');
+
+/*
 const mysql = require('mysql');
 const db = mysql.createConnection({
     host:"127.0.0.1",
@@ -22,6 +25,7 @@ db.connect(err => {
   });
 
 module.exports = db;
+*/
 
 // parsuje dane typu application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
